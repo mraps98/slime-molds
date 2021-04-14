@@ -21,16 +21,15 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  const tree = new LSystem({
+  const snowFlake = new LSystem({
     axiom: "F++F++F",
     productions: {
       F: "F-F++F-F",
     },
   });
-  tree.setFinals(finals(tree));
+  snowFlake.setFinals(finals(snowFlake));
 
   /* body */
-  const result = tree.iterate(2);
-  console.log(result);
-  tree.final();
+  snowFlake.iterate(4);
+  snowFlake.final();
 });
